@@ -1,0 +1,9 @@
+ /*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import "layout/auth";
+@import "layout/common";
+@import "layout/landing";

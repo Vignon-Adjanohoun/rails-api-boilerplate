@@ -1,0 +1,77 @@
+
+
+@layer utilities {
+  @variants hover, focus {
+    .button-brightness {
+      box-shadow: inset 0 0 28px 12px rgba(255, 255, 255, 0.3);
+    }
+    .gradient-border-bottom {
+      color: rgba(59, 130, 246, 1);
+      border-width: 0 0 4px 0;
+      border-style: solid;
+      border-image: linear-gradient(
+          to right,
+          rgba(59, 130, 246, 1),
+          rgba(59, 130, 246, 1)
+        )
+        3;
+    }
+  }
+}
+
+.bg-blue-white-grad{
+  background-image: linear-gradient(to left, #6a98ff,#ffffff,#ffffff);
+}
+.bg-header-desktop { 
+    background-image: url("~landing/bg-intro-desktop.svg");
+}
+.bg-header-mobile{
+    background-image: url("~landing/bg-intro-mobile.svg");
+}
+.bg-image-mockups{
+    background-image:  url("~landing/image-mockups-screens.png");
+}
+.h-605{
+  height: 605px;
+}
+.w-270{
+  width: 280px;
+}
+.special-h1{
+    font-size: 2.1rem;
+}
+.mt-neg1{
+  margin-top: -10px;
+}
+
+.landing-dialog {
+
+  .el-dialog{
+    border-radius: 20px;
+    
+
+
+    .el-dialog__header{
+      background-color: rgba(59, 130, 246, 1);
+      border-radius: 15px 15px 0px 0px;    
+      
+      .el-dialog__title{
+        color: white;
+      }
+
+      .el-dialog__headerbtn > .el-dialog__close{
+
+        font-size: 19px;
+        background-color: white;
+        border-radius: 15px;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+html,
+body {
+  font-size: 18px;
+}
+

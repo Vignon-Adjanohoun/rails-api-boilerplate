@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ikliin</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <div>
+    <div class="bg-gray-200">
+      <nav class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
+        <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+          <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+            <div class="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase">
+              <%= link_to root_path  do %>
+              Ikliin
+              <% end %>
+            </div>
+          </div>
+          <div class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none block rounded shadow-lg" id="example-navbar-warning">
+            <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+
+              <li class="flex items-center">
+                <%= link_to destroy_user_session_path, 
+                :method => :delete, :class => "lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"  do %>
+                Logout
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <section class="min-h-screen relative pb-40">
+          <div class="bg-green-600 md:pt-32 pb-32 pt-12">
+            <div class="px-4 md:px-10 mx-auto w-full">
+            </div>
+          </div>
+          <div class="px-4 md:px-10 mx-auto w-full -m-24">
+            <%
+=begin%>
+            <% if alert %>
+            <div class="flex justify-center absolute top-0 right-0">
+              <div class="w-full px-6 py-3 shadow-2xl flex flex-col items-center border-t
+                      sm:w-auto sm:m-4 sm:rounded-lg sm:flex-row sm:border bg-red-600 border-red-600 text-white">
+                <div> <%= alert %> </div>
+              </div>
+            </div>
+            <% end %>
+            <% if notice %>
+            <div class="flex justify-center absolute top-0 right-0">
+              <div class="w-full px-6 py-3 shadow-2xl flex flex-col items-center border-t
+                      sm:w-auto sm:m-4 sm:rounded-lg sm:flex-row sm:border bg-blue-600 border-blue-600 text-white">
+                <div> <%= notice %> </div>
+              </div>
+            </div>
+            <% end %>
+            <%
+=end%>
+            <%= yield %>
+          </div>
+          <footer class="block py-4 absolute bottom-0 w-full">
+            <div class="container mx-auto px-4">
+              <hr class="mb-4 border-b-1 border-gray-300" />
+              <div class="flex flex-wrap items-center md:justify-between justify-center">
+                <div class="w-full md:w-4/12 px-4 mx-auto">
+                  <div class="text-sm text-gray-600 font-semibold py-1 text-center">
+                    Copyright © <%= Time.current.year %>
+                    <a href="https://www.facedapter.com" class="text-gray-600 hover:text-gray-800 text-sm font-semibold py-1">
+                      Ikliin
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>
