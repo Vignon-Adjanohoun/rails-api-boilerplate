@@ -26,17 +26,21 @@ module API::V1
       params do
         build_with Grape::Extensions::Hash::ParamBuilder
         requires :name, type: String, desc: 'Name of the company'
+        optional :phone, type: String, desc: 'Phone number of the company'
+        optional :email, type: String, desc: 'Business Email of the company'
       end
       post do
         record = Company.create(@permitted_params)
         CompanyBlueprint.render_as_json(record)
       end
 
-      desc 'Update  Company'
+      desc 'Update a Company'
       params do
         build_with Grape::Extensions::Hash::ParamBuilder
         requires :id, type: String, desc: 'Id of company'
         optional :name, type: String, desc: 'Name of the company'
+        optional :phone, type: String, desc: 'Phone number of the company'
+        optional :email, type: String, desc: 'Business Email of the company'
       end
       put ':id' do
         record = Company.find(permitted_params[:id])
