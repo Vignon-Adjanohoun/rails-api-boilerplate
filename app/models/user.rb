@@ -39,4 +39,8 @@ class User
   # user fields
   field :first_name, type: String, default: ''
   field :last_name, type: String, default: ''
+  field :phone, type: String, default: ''
+  field :role, type: String, default: 'basic'
+
+  belongs_to :company, required: true
 end
