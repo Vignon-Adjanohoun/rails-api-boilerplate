@@ -1,5 +1,7 @@
 module API::V1::Defaults
   extend ActiveSupport::Concern
+  # auth :grape_devise_token_auth, resource_class: :user
+  # helpers GrapeDeviseTokenAuth::AuthHelpers
 
   included do
     prefix 'api'

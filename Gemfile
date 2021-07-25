@@ -73,3 +73,7 @@ gem 'grape-swagger'
 gem 'grape-swagger-rails'
 # hashi hash helper
 gem 'hashie'
+# token auth fo api
+gem 'devise_token_auth'
+gem 'grape_devise_token_auth'
+gem 'mongoid-locker'

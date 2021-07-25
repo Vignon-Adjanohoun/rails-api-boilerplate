@@ -1,10 +1,12 @@
 class User
   include Mongoid::Document
+  include Mongoid::Locker
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :rememberable
-  # :registerable,
-  #        :recoverable, :validatable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  include DeviseTokenAuth::Concerns::User
 
   ## Database authenticatable
   field :email,              type: String, default: ""
@@ -42,5 +44,19 @@ class User
   field :phone, type: String, default: ''
   field :role, type: String, default: 'basic'
 
-  belongs_to :company, required: true
+  # belongs_to :company, required: true
+
+  field :locker_locked_at, type: Time
+  field :locker_locked_until, type: Time
+
+  locker locked_at_field: :locker_locked_at
+
+  ## Required
+  field :provider, type: String
+  field :uid,      type: String, default: ''
+
+  ## Tokens
+  field :tokens, type: Hash, default: {}
+
+  index({ uid: 1, provider: 1}, { name: 'uid_provider_index', unique: true, background: true })
 end

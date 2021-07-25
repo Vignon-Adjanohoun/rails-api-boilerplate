@@ -1,0 +1,1 @@
+GrapeDeviseTokenAuth.setup!
