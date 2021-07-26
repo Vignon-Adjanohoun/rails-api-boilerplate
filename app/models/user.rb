@@ -44,7 +44,7 @@ class User
   field :phone, type: String, default: ''
   field :role, type: String, default: 'basic'
 
-  # belongs_to :company, required: true
+  belongs_to :company, required: true
 
   field :locker_locked_at, type: Time
   field :locker_locked_until, type: Time
@@ -59,4 +59,15 @@ class User
   field :tokens, type: Hash, default: {}
 
   index({ uid: 1, provider: 1}, { name: 'uid_provider_index', unique: true, background: true })
+
+  before_validation :set_default
+
+  private
+
+  def set_default
+    return unless new_record?
+
+    self.uid = email
+    self.provider = 'email'
+  end
 end
