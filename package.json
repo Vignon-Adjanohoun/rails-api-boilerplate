@@ -1,5 +1,5 @@
 {
-  "name": "Ikliin",
+  "name": "rails-api-boilerplate",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
