@@ -1,6 +1,6 @@
 # Rails API Boilerplate + VueJS Homepage
 
-Rails API Boilerplate is a boilerplate project for a JSON RES API and homepages with VueJs. It can be used for creating an API for a mobile application and simple homepage describing what the mobile app does.
+Rails API Boilerplate is a boilerplate project for a JSON REST API and homepages with VueJs. It can be used for creating an API for a mobile application and simple homepage describing what the mobile app does.
 
 ## Features
 
